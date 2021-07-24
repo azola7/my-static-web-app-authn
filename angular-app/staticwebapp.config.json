@@ -2,5 +2,21 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
-  }
+  },
+  "routes" :[
+    {
+      "route": "/profile",
+      "methods": ["PUT", "POST", "DELETE"],
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": "404"
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
+
 }
